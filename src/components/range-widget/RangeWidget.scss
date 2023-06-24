@@ -1,0 +1,95 @@
+@import '../../assets/styles/scss/variable.scss';
+
+.range-wrapper {
+	margin: 20px;
+	min-width: 220px;
+}
+
+.range {
+	margin-top: 35px;
+	width: 100%;
+
+	input {
+		width: 100%;
+	}
+}
+
+.slider {
+	/* removing default appearance */
+	-webkit-appearance: none;
+	appearance: none;
+	/* creating a custom design */
+	width: 100%;
+	cursor: pointer;
+	outline: none;
+	/*  slider progress trick  */
+	overflow: hidden;
+	border-radius: 16px;
+}
+
+.slider::-webkit-slider-runnable-track {
+	height: 15px;
+	background: $light-white;
+	border-radius: 16px;
+}
+
+/* Track: Mozilla Firefox */
+.slider::-moz-range-track {
+	height: 15px;
+	background: #ccc;
+	border-radius: 16px;
+}
+
+/* Thumb: webkit */
+.slider::-webkit-slider-thumb {
+	/* removing default appearance */
+	-webkit-appearance: none;
+	appearance: none;
+	/* creating a custom design */
+	height: 15px;
+	width: 15px;
+
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#6fdbe7+0,6fdbe7+50,ffffff+51,ffffff+100 */
+	background: #6fdbe7;
+	/* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, #6fdbe7 0%, #6fdbe7 50%, #ffffff 51%, #ffffff 100%);
+	/* FF3.6-15 */
+	background: -webkit-radial-gradient(center, ellipse cover, #6fdbe7 0%, #6fdbe7 50%, #ffffff 51%, #ffffff 100%);
+	/* Chrome10-25,Safari5.1-6 */
+	background: radial-gradient(ellipse at center, #6fdbe7 0%, #6fdbe7 50%, #ffffff 51%, #ffffff 100%);
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6fdbe7', endColorstr='#ffffff', GradientType=1);
+	/* IE6-9 fallback on horizontal gradient */
+
+	border-radius: 50%;
+	border: 2px solid $range-active-bg;
+	/*  slider progress trick  */
+	box-shadow: -407px 0 0 400px $range-active-bg;
+}
+
+/* Thumb: Firefox */
+.slider::-moz-range-thumb {
+	height: 15px;
+	width: 15px;
+	background-color: #fff;
+	border-radius: 50%;
+	border: 1px solid $range-active-bg;
+	/*  slider progress trick  */
+	box-shadow: -407px 0 0 400px $range-active-bg;
+}
+
+.inner-circle {
+	fill: $circle-bg;
+}
+
+.outer-circle {
+	fill: $base-color;
+	stroke: $light-white;
+}
+
+.circle-progress {
+	stroke: $light-white;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	fill: $circle-outer-bg;
+}
