@@ -7,7 +7,7 @@ function App() {
 		<div className="App d-flex flex-column align-items-center">
 			<RangeWidget size={300} defaulValue={5} circleGap={80} />
 			<hr />
-			<ScaleWidget />
+			<ScaleWidget defaulValue={2} />
 		</div>
 	);
 }

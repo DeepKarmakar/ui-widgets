@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './ScaleWidget.scss'
 
-const ScaleWidget = () => {
+const ScaleWidget = ({ defaulValue = null }) => {
 	const initialScale = [
 		{
 			name: 'High',
@@ -53,6 +53,16 @@ const ScaleWidget = () => {
 		})
 		setScale(newVal);
 	}
+
+
+	useEffect(() => {
+		const scaleLength = initialScale.length;
+		if (defaulValue != null && defaulValue <= scaleLength && defaulValue > 0) {
+			const convertToIndex = scaleLength - defaulValue;
+			activeHandler(convertToIndex, 'click');
+			setActiveScale(initialScale[convertToIndex].name)
+		}
+	}, [])
 
 	return (
 		<div className="scale-wraper">
