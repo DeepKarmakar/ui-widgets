@@ -63,23 +63,29 @@
 		}
 
 		&:nth-child(5) {
-			width: 15%;
+			width: 8%;
+			height: 85px;
 
 			div {
 				border-radius: 0 0 10px 10px;
 
 				&::before,
 				&::after {
-					width: 20px;
-					height: 100%;
+					width: 34px;
+					height: 102%;
 				}
 
 				&::before {
-					left: -6px;
+					left: -13px;
+					transform: rotate(-23deg);
+					top: -2px;
+					border-radius: 47px 58px 55px 33px;
 				}
 
 				&::after {
-					right: -6px;
+					right: -13px;
+					transform: rotate(23deg);
+					top: -2px;
 				}
 			}
 		}
