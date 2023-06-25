@@ -27,17 +27,19 @@ const RangeWidget = ({ size = 250, defaulValue = 5, circleGap = 30 }) => {
 			className="range-wrapper d-flex flex-column align-items-center"
 			style={{ width: widgetSize }}>
 
-			<ProgressCircle size={widgetSize} percentage={range * 10} strokeWidth={5} circleGap={circleGap} />
+			<ProgressCircle size={widgetSize} value={range} strokeWidth={5} circleGap={circleGap} />
 			<div className="range">
 				<input
 					type="range"
 					min="0"
 					max="10"
 					step="1"
+					role="slider"
 					value={range}
 					className="slider"
 					onChange={(e) => progressHandler(e.target.value)} />
 			</div>
+			{/* <h1>{range}</h1> */}
 		</div>
 	);
 }

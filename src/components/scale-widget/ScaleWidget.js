@@ -72,6 +72,7 @@ const ScaleWidget = ({ defaulValue = null }) => {
 					scale.map((item, index) => (
 						<div
 							key={index}
+							data-testid={`scale${index}`}
 							className={`item ${item.click || item.hover ? 'active' : ''}`}
 							onClick={() => { activeHandler(index, 'click'); setActiveScale(item.name) }}
 							onMouseOver={() => activeHandler(index, 'hover')}

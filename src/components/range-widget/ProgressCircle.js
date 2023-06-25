@@ -1,4 +1,4 @@
-const ProgressCircle = ({ percentage = 80, size = 200, strokeWidth = 5, circleGap }) => {
+const ProgressCircle = ({ value = 80, size = 200, strokeWidth = 5, circleGap }) => {
 
 	// Size of the enclosing square
 	const innerSize = size - circleGap;
@@ -12,6 +12,7 @@ const ProgressCircle = ({ percentage = 80, size = 200, strokeWidth = 5, circleGa
 	// Arc length at 100% coverage is the circle circumference
 	const dashArray = radius2 * Math.PI * 2;
 	// Scale 100% coverage overlay with the actual percent
+	const percentage = value * 10;
 	const dashOffset = dashArray - dashArray * percentage / 100;
 
 	return (
@@ -47,8 +48,9 @@ const ProgressCircle = ({ percentage = 80, size = 200, strokeWidth = 5, circleGa
 				x="50%"
 				y="50%"
 				dy=".3em"
-				textAnchor="middle">
-				{`${percentage / 10}`}
+				textAnchor="middle"
+				data-testid="circle-text">
+				{`${value}`}
 			</text>
 		</svg>
 	);
